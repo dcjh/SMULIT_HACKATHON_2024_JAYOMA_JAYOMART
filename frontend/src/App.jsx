@@ -7,11 +7,11 @@ const App = () => {
   return (
     <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/data/details/:id' element={<ShowData />} />
+        <Route path='/dataMart/details/:id' element={<ShowData />} />
         <Route path='/checkout/user' element={<Checkout />} />
-        <Route path='/data/create' element={<CreateData />} />
-        <Route path='/data/delete/:id' element={<DeleteData />} />
-        <Route path='/data/edit/:id' element={<EditData />} />
+        <Route path='/dataMart/create' element={<CreateData />} />
+        <Route path='/dataMart/delete/:id' element={<DeleteData />} />
+        <Route path='/dataMart/edit/:id' element={<EditData />} />
     </Routes>
   )
 }
