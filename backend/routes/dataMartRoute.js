@@ -32,10 +32,10 @@ router.post('/', async (request, response) => {
 // route to get ALL dataNodes from database
 router.get('/', async (request, response) => {
     try {
-        const allNodes = await dataNode.find({});
+        const mart = await dataNode.find({});
         return response.status(200).json({
-            count: allNodes.length,
-            content: allNodes,
+            count: mart.length,
+            content: mart,
         });
     } catch (error) {
         console.log(error.message);
