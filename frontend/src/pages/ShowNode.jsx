@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
+import Spinner from '../components/Spinner';
 
 const ShowNode = () => {
     const [node, setNode] = useState([]);
@@ -35,23 +36,23 @@ const ShowNode = () => {
                         <span>{node._id}</span>
                     </div>
                     <div className='my-4'>
-                        <span className='text-xl mr-4 text-gray-500'>Id</span>
+                        <span className='text-xl mr-4 text-gray-500'>Title</span>
                         <span>{node.title}</span>
                     </div>
                     <div className='my-4'>
-                        <span className='text-xl mr-4 text-gray-500'>Id</span>
+                        <span className='text-xl mr-4 text-gray-500'>Price</span>
                         <span>{node.price}</span>
                     </div>
                     <div className='my-4'>
-                        <span className='text-xl mr-4 text-gray-500'>Id</span>
+                        <span className='text-xl mr-4 text-gray-500'>Description</span>
                         <span>{node.description}</span>
                     </div>
                     <div className='my-4'>
-                        <span className='text-xl mr-4 text-gray-500'>Id</span>
+                        <span className='text-xl mr-4 text-gray-500'>Bias</span>
                         <span>{node.bias}</span>
                     </div>
                     <div className='my-4'>
-                        <span className='text-xl mr-4 text-gray-500'>Id</span>
+                        <span className='text-xl mr-4 text-gray-500'>Date of Creation</span>
                         <span>{new Date(node.createdAt).toString()}</span>
                     </div>
                 </div>

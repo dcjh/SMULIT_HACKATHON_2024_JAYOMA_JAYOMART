@@ -45,7 +45,7 @@ const Home = () => {
                 <thead>
                     <tr>
                         <th className='border border-slate-600 rounded-md'>No</th>
-                        <th className='border border-slate-600 rounded-md'>Name</th>
+                        <th className='border border-slate-600 rounded-md'>Title</th>
                         <th className='border border-slate-600 rounded-md'>Price</th>
                         <th className='border border-slate-600 rounded-md max-md:hidden'>Description</th>
                         <th className='border border-slate-600 rounded-md max-md:hidden'>Bias</th>
