@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import UserHeader from "../components/home/UserHeader";
-import GuestHeader from "../components/home/GuestHeader";
+import UserHeader from "../components/header/UserHeader";
+import GuestHeader from "../components/header/GuestHeader";
 import smuLogo from "../assets/smu.svg";
 import icpLogo from "../assets/icp.svg";
 import molLogo from "../assets/mol.svg";

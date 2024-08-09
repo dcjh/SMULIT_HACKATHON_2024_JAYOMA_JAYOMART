@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Spinner from "../components/Spinner";
-import NodeCard from "../components/home/nodeCard";
+import NodeCard from "../components/mart/NodeCard";
 
 const Mart = () => {
     const [mart, setMart] = useState([]);
