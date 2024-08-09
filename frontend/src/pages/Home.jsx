@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import UserHeader from "../components/header/UserHeader";
 import GuestHeader from "../components/header/GuestHeader";
 import smuLogo from "../assets/smu.svg";
@@ -7,7 +7,12 @@ import icpLogo from "../assets/icp.svg";
 import molLogo from "../assets/mol.svg";
 
 const Home = () => {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
+
+//   const location = useLocation();
+//   if (location.state.user !== user) {
+//     setUser(location.state.user);
+//   }
 
   return (
     <>
@@ -36,6 +41,7 @@ const Home = () => {
               <div className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
                 <Link
                   to="/dataMart"
+                  state={{ user: user }}
                   className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
                   <span className="relative text-base font-semibold text-white">

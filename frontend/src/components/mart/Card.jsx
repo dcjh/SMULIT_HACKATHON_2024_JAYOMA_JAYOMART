@@ -1,94 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { IoMdMore } from "react-icons/io";
+import CardPreview from "./CardPreview";
 
-const Card = () => {
+const Card = ({ node }) => {
+  const [cardPreview, setCardPreview] = useState(false);
+  const navigate = useNavigate();
+
   return (
-    <div class="flex bg-white rounded-lg shadow dark:bg-gray-800">
-      <div class="relative flex-none w-24 md:w-48">
+    <div 
+        className="bg-white rounded-lg shadow dark:bg-gray-800 flex flex-col h-full min-h-[300px] relative"
+        onClick={() => navigate(`/dataMart/details/${node._id}`)}
+    >
+      <div className="relative w-full h-1/3 flex-shrink-0">
         <img
           src="/images/object/8.jpg"
           alt="shopping image"
-          class="absolute inset-0 object-cover w-full h-full rounded-lg"
+          className="absolute inset-0 object-cover w-full h-full rounded-t-lg"
         />
       </div>
-      <form class="flex-auto p-6">
-        <div class="flex flex-wrap">
-          <h1 class="flex-auto text-xl font-semibold dark:text-gray-50">
-            Classic Utility Jacket
-          </h1>
-          <div class="text-xl font-semibold text-gray-500 dark:text-gray-300">
-            $110.00
+      <div className="p-4 flex flex-col justify-between flex-grow relative">
+        <div className="mb-4">
+          <div className="flex justify-between items-start mb-2">
+            <h1 className="text-lg font-semibold dark:text-gray-50">
+              {node.title}
+            </h1>
+            <IoMdMore
+              className="text-2xl text-green-800 hover:text-black cursor-pointer mt-0.5"
+              onClick={(e) => {
+                e.stopPropagation();
+                setCardPreview(true);
+              }}
+            />
           </div>
-          <div class="flex-none w-full mt-2 text-sm font-medium text-gray-500 dark:text-gray-300">
-            In stock
+          <div className="text-sm text-gray-500 dark:text-gray-300 mb-2">
+            {`Published on : ${new Date(node.createdAt).toLocaleString("default", {
+              month: "short",
+            })} ${new Date(node.createdAt).getFullYear()}`}
+          </div>
+          <div className="text-sm text-gray-500 dark:text-gray-300">
+            Bias : {node.bias}
           </div>
         </div>
-        <div class="flex items-baseline mt-4 mb-6 text-gray-700 dark:text-gray-300">
-          <div class="flex space-x-2">
-            <label class="text-center">
-              <input
-                type="radio"
-                class="flex items-center justify-center w-6 h-6 bg-gray-100 rounded-lg dark:bg-gray-600"
-                name="size"
-                value="xs"
-              />
-              XS
-            </label>
-            <label class="text-center">
-              <input
-                type="radio"
-                class="flex items-center justify-center w-6 h-6"
-                name="size"
-                value="s"
-              />
-              S
-            </label>
-            <label class="text-center">
-              <input
-                type="radio"
-                class="flex items-center justify-center w-6 h-6"
-                name="size"
-                value="m"
-              />
-              M
-            </label>
-            <label class="text-center">
-              <input
-                type="radio"
-                class="flex items-center justify-center w-6 h-6"
-                name="size"
-                value="l"
-              />
-              L
-            </label>
-            <label class="text-center">
-              <input
-                type="radio"
-                class="flex items-center justify-center w-6 h-6"
-                name="size"
-                value="xl"
-              />
-              XL
-            </label>
-          </div>
-          <a
-            href="#"
-            class="hidden ml-auto text-sm text-gray-500 underline md:block dark:text-gray-300"
-          >
-            Size Guide
-          </a>
+        <div className="absolute bottom-3 right-0 bg-purple-100 text-purple-800 font-semibold text-base pl-8 pr-4 py-2 triangle">
+          {node.price} ICP
         </div>
-        <div class="flex mb-4 text-sm font-medium">
-          <button
-            type="button"
-            class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-          >
-            Buy now
-          </button>
-        </div>
-        <p class="text-sm text-gray-500 dark:text-gray-300">
-          Free shipping on all continental US orders.
-        </p>
-      </form>
+      </div>
+      {cardPreview && (
+        <CardPreview node={node} onClose={() => setCardPreview(false)} />
+      )}
     </div>
   );
 };

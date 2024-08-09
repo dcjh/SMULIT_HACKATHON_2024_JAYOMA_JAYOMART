@@ -4,11 +4,11 @@ import { PiBookOpenTextLight } from 'react-icons/pi';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BiUserCircle, BiShow } from 'react-icons/bi';
 import { MdOutlineDelete } from 'react-icons/md';
-import NodePeek from './NodePeek';
+import CardPreview from './CardPreview';
 
 
 const NodeIndividualCard = ({ node }) => {
-  const [nodePeek, setNodePeek] = useState(false);
+  const [cardPreview, setCardPreview] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -31,7 +31,7 @@ const NodeIndividualCard = ({ node }) => {
             className="text-2xl text-green-800 hover:text-black" 
             onClick={(e) => {
                 e.stopPropagation(); 
-                setNodePeek(true);
+                setCardPreview(true);
             }}
         />
         <Link 
@@ -49,8 +49,8 @@ const NodeIndividualCard = ({ node }) => {
       </div>
     </div>
     {
-        nodePeek && (
-            <NodePeek node={node} onClose={() => setNodePeek(false)} />
+        cardPreview && (
+            <CardPreview node={node} onClose={() => setCardPreview(false)} />
         )
     }
     </div>

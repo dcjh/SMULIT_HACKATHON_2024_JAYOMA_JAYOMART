@@ -31,7 +31,7 @@ const GuestHeader = () => {
             <ul className="flex flex-1 items-center justify-end gap-3">
               <li>
                 <Link
-                  to="/signup"
+                  to="/signUp"
                   className="relative flex py-[5px] w-full items-center justify-center px-3 before:absolute before:inset-0 before:rounded-lg before:border before:border-transparent before:bg-primary/5 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max before:shadow"
                 >
                     <span className="relative text-sm text-gray-400">
@@ -41,7 +41,7 @@ const GuestHeader = () => {
               </li>
               <li>
                 <Link
-                  to="/signin"
+                  to="/signIn"
                   className="relative flex py-[5px] w-full items-center justify-center px-3 before:absolute before:inset-0 before:rounded-lg before:border before:border-transparent before:bg-primary before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max before:shadow"
                 >
                     <span className="relative text-sm text-white">

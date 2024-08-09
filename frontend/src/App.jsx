@@ -1,7 +1,7 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import './pages/index';
-import { Checkout, CreateNode, DeleteNode, ShowNode, Home, EditNode, Mart } from './pages/index';
+import { Checkout, CreateNode, DeleteNode, ShowNode, Home, EditNode, Mart, SignIn, SignUp } from './pages/index';
 
 const App = () => {
   return (
@@ -13,6 +13,8 @@ const App = () => {
         <Route path='/dataMart/create' element={<CreateNode />} />
         <Route path='/dataMart/delete/:id' element={<DeleteNode />} />
         <Route path='/dataMart/edit/:id' element={<EditNode />} />
+        <Route path='/signUp' element={<SignUp />} />
+        <Route path='/signIn' element={<SignIn />} />
     </Routes>
   )
 }
