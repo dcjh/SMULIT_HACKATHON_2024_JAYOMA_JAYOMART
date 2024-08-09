@@ -55,7 +55,9 @@ const ShowNode = () => {
                     )}
                     <div className='my-4'>
                         <span className='text-xl mr-4 text-gray-500'>Date of Creation</span>
-                        <span>{new Date(node.createdAt).toString()}</span>
+                        <span>
+                            {`${new Date(node.createdAt).getDate()} ${new Date(node.createdAt).toLocaleString('default', { month: 'long' })} ${new Date(node.createdAt).getFullYear()}`}
+                        </span>
                     </div>
                 </div>
             )}

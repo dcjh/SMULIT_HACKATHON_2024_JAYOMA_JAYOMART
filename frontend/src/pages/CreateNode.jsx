@@ -3,20 +3,24 @@ import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useSnackbar } from 'notistack';
 
 const CreateNode = () => {
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState(0);
+    const [preview, setPreview] = useState('');
     const [description, setDescription] = useState('');
     const [bias, setBias] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
-
+    const { enqueueSnackbar } = useSnackbar();
+   
     const handleSaveNode = () => {
         const node = {
             title,
             price,
+            preview,
             description,
             bias
         };
@@ -25,11 +29,13 @@ const CreateNode = () => {
             .post('http://localhost:5555/dataMart', node)
             .then(() => {
                 setLoading(false);
+                enqueueSnackbar('Listing created successfully', { variant: 'success' });
                 navigate('/');
             })
             .catch((error) => {
                 setLoading(false);
-                alert('An error happened. Please check console')
+                // alert('An error happened. Please check console')
+                enqueueSnackbar('Error', { variant: 'error' });
                 console.log(error);
             })
     }
@@ -55,6 +61,15 @@ const CreateNode = () => {
                     type='number'
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
+                    className='border-2 border-gray-500 px-4 py-2 w-full'
+                />
+            </div>
+            <div className='my-4'>
+                <label>Preview</label>
+                <input 
+                    type='text'
+                    value={preview}
+                    onChange={(e) => setPreview(e.target.value)}
                     className='border-2 border-gray-500 px-4 py-2 w-full'
                 />
             </div>

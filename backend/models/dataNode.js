@@ -10,6 +10,10 @@ const dataSchema = mongoose.Schema(
         type: Number,
         required: true,
       },
+      preview: {
+        type: String,
+        required: true,
+      },
       description: {
         type: String,
         required: true,

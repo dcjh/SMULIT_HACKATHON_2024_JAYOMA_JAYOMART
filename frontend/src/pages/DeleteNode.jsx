@@ -3,14 +3,14 @@ import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import { useSnackbar } from 'notistack';
 
 const DeleteNode = () => {
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
-
     const {id} = useParams(); 
+    const { enqueueSnackbar } = useSnackbar();
 
     const handleDeleteNode = () => {
         setLoading(true);
@@ -18,11 +18,13 @@ const DeleteNode = () => {
             .delete(`http://localhost:5555/dataMart/${id}`)
             .then(() => {
                 setLoading(false);
+                enqueueSnackbar('Listing deleted successfully', { variant: 'success' });
                 navigate('/');
             })
             .catch((error) => {
                 setLoading(false);
-                alert('An error happened. Please check console')
+                // alert('An error happened. Please check console')
+                enqueueSnackbar('Error', { variant: 'error' });
                 console.log(error);
             })
     }

@@ -8,6 +8,7 @@ router.post('/', async (request, response) => {
     try {
         if(!request.body.title || 
            !request.body.price || 
+           !request.body.preview ||
            !request.body.description 
         ) {
             return response.status(400).send({
@@ -18,7 +19,9 @@ router.post('/', async (request, response) => {
         const newDataNode = {
             title: request.body.title,
             price: request.body.price,
+            preview: request.body.preview,
             description: request.body.description,
+            bias: request.body.bias,
         };
         const node = await dataNode.create(newDataNode);
 
@@ -60,8 +63,9 @@ router.get('/:id', async (request, response) => {
 router.put('/:id', async (request, response) => {
     try {
         if(!request.body.title || 
-           !request.body.price || 
-        !request.body.description 
+           !request.body.price ||
+           !request.body.preview ||
+           !request.body.description 
         ) {
             return response.status(400).send({
                 message: 'Send all required fields: title, price, description',
