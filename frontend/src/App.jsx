@@ -8,7 +8,7 @@ const App = () => {
     <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/dataMart/details/:id' element={<ShowNode />} />
-        <Route path='/checkout/user' element={<Checkout />} />
+        <Route path='/dataMart/checkout' element={<Checkout />} />
         <Route path='/dataMart/create' element={<CreateNode />} />
         <Route path='/dataMart/delete/:id' element={<DeleteNode />} />
         <Route path='/dataMart/edit/:id' element={<EditNode />} />

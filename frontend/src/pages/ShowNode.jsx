@@ -47,10 +47,12 @@ const ShowNode = () => {
                         <span className='text-xl mr-4 text-gray-500'>Description</span>
                         <span>{node.description}</span>
                     </div>
-                    <div className='my-4'>
-                        <span className='text-xl mr-4 text-gray-500'>Bias</span>
-                        <span>{node.bias}</span>
-                    </div>
+                    {node.bias && (
+                        <div className='my-4'>
+                            <span className='text-xl mr-4 text-gray-500'>Bias</span>
+                            <span>{node.bias}</span>
+                        </div>
+                    )}
                     <div className='my-4'>
                         <span className='text-xl mr-4 text-gray-500'>Date of Creation</span>
                         <span>{new Date(node.createdAt).toString()}</span>
