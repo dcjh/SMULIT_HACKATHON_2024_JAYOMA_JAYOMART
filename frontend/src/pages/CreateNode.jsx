@@ -37,7 +37,7 @@ const CreateNode = () => {
   return (
     <div className='p-4'>
         <BackButton />
-        <h1 className='text-3xl my-4'>Create New Node</h1>
+        <h1 className='text-3xl my-4'>Create New Data Listing</h1>
         {loading ? <Spinner /> : ''}
         <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
             <div className='my-4'>
@@ -77,7 +77,7 @@ const CreateNode = () => {
                 />
             </div>
             <button className='p-2 bg-sky-300 m-8' onClick={handleSaveNode}>
-                Publish Posting
+                Publish Listing
             </button>
         </div>
     </div>
