@@ -1,6 +1,6 @@
 # Jayomart
 
-Jayomart is a marketplace website that leverages the MERN stack (MongoDB, Express.js, React, Node.js) to create a secure and transparent platform for selling and buying data. By integrating blockchain technology, Jayomart ensures that all transactions are secure, transparent, and tamper-proof.
+Jayomart is a marketplace website that leverages the MERN stack (MongoDB, Express.js, React, Node.js) to create a secure and transparent platform for selling and buying data. By integrating blockchain technology, Jayomart ensures that all data transactions are secure, transparent, and tamper-proof.
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@ To get started with Jayomart, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/jayomart.git
+    git clone https://github.com/dcjh/SMULIT_HACKATHON_2024_JAYOMA_BLOCKCHAIN_DATA_MART.git
     ```
 
 2. Navigate to the project directory:
