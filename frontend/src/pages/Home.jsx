@@ -1,22 +1,35 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import UserHeader from "../components/header/UserHeader";
 import GuestHeader from "../components/header/GuestHeader";
 import smuLogo from "../assets/smu.svg";
 import icpLogo from "../assets/icp.svg";
 import molLogo from "../assets/mol.svg";
+import { useSnackbar } from "notistack";
 
 const Home = () => {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
+  const { enqueueSnackbar } = useSnackbar();
+  const navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+    if (location.state && location.state.user === true) {
+      setUser(true);
+    }
+  }, [location.state]);
 
-//   const location = useLocation();
-//   if (location.state.user !== user) {
-//     setUser(location.state.user);
-//   }
+  const handleBrowseMartClick = () => {
+    if (!user) {
+      enqueueSnackbar("Please Sign In", { variant: "error" });
+      navigate("/");  // Redirect to the homepage or login page
+    } else {
+      navigate("/dataMart", { state: { user: user } });
+    }
+  };
 
   return (
     <>
-      {!user ? <GuestHeader /> : <UserHeader />}
+      {!user ? <GuestHeader /> : <UserHeader setUser={setUser}/>}
       <div className="relative" id="home">
         <div
           aria-hidden="true"
@@ -37,15 +50,14 @@ const Home = () => {
                 technology that prevents the training Data that you purchase from being corrupted! The data is immutable, ensuring that you get the Data you purchased. 
               </p>
               <div className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
-                <Link
-                  to="/dataMart"
-                  state={{ user: user }}
+                <button
+                    onClick={handleBrowseMartClick}
                   className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
                   <span className="relative text-base font-semibold text-white">
                     Browse Mart
                   </span>
-                </Link>
+                </button>
               </div>
               <div className="hidden py-8 mt-12 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
                 <div className="text-center">

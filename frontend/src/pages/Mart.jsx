@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CardView from "../components/mart/CardView";
 import UserHeader from "../components/header/UserHeader";
@@ -7,7 +7,7 @@ import GuestHeader from "../components/header/GuestHeader";
 
 const Mart = () => {
   const [mart, setMart] = useState([]);
-
+  const navigate = useNavigate();
   const location = useLocation();
   const [user, setUser] = useState(location.state.user);
 
@@ -32,9 +32,9 @@ const Mart = () => {
           <div className="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
           <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
         </div>
-        {!user ? <GuestHeader /> : <UserHeader />}
+        {!user ? <GuestHeader /> : <UserHeader setUser={setUser}/>}
         <div className="p-4">
-          <CardView mart={mart} user={user}/>
+          <CardView mart={mart} user={user} setUser={setUser}/>
         </div>
       </div>
     </>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
 import { MdOutlineAddBox } from "react-icons/md";
 import Logo from "./Logo";
 
-const UserHeader = () => {
+const UserHeader = ({ setUser }) => {
   const [top, setTop] = useState(true);
+  const navigate = useNavigate();
 
   // detect whether user has scrolled the page down by 10px
   const scrollHandler = () => {
@@ -17,6 +18,11 @@ const UserHeader = () => {
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
+
+  const handleLogout = () => {
+    setUser(false); // Update the user state to false
+    navigate("/");  // Redirect to the home page
+  };
 
   return (
     <header className="fixed top-2 z-30 w-full md:top-6">
@@ -32,6 +38,12 @@ const UserHeader = () => {
           >
             <MdOutlineAddBox />
           </Link>
+          <button
+            onClick={handleLogout}
+            className="relative flex py-[5px] w-full items-center justify-center px-3 before:absolute before:inset-0 before:rounded-lg before:border before:border-transparent before:bg-primary/20 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max before:shadow"
+          >
+            <span className="relative text-sm text-gray-500">LogOut</span>
+          </button>
         </div>
       </div>
     </header>

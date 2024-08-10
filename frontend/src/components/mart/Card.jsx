@@ -12,17 +12,24 @@ import pic6 from '../../assets/pic6.jpg';
 import pic7 from '../../assets/pic7.jpeg';
 import pic8 from '../../assets/pic8.jpg';
 
-const Card = ({ node, user, index }) => {
+const Card = ({ node, user, index, setUser }) => {
   const [cardPreview, setCardPreview] = useState(false);
   const navigate = useNavigate();
 
   const images = [pic0,pic1,pic2,pic3,pic4,pic5,pic6,pic7,pic8];
   const imageSrc = images[index] || images[0];
 
+  const handleNavigate = () => {
+    if (!user) {
+      setUser(false);
+    }
+    navigate(`/dataMart/details/${node._id}`, { state: { user: user, index: index }});
+  };
+
   return (
     <div 
         className="bg-white rounded-lg shadow dark:bg-gray-800 flex flex-col h-full min-h-[300px] relative"
-        onClick={() => navigate(`/dataMart/details/${node._id}`, { state: { user: user}})}
+        onClick={handleNavigate}
     >
       <div className="relative w-full h-1/3 flex-shrink-0">
         <img

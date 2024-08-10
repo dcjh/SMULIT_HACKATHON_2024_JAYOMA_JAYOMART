@@ -5,13 +5,26 @@ import BackButton from "../components/BackButton";
 import GuestHeader from "../components/header/GuestHeader";
 import UserHeader from "../components/header/UserHeader";
 import { useSnackbar } from "notistack";
+import pic0 from "../assets/pic0.webp";
+import pic1 from "../assets/pic1.jpg";
+import pic2 from "../assets/pic2.jpg";
+import pic3 from "../assets/pic3.jpg";
+import pic4 from "../assets/pic4.png";
+import pic5 from "../assets/pic5.png";
+import pic6 from "../assets/pic6.jpg";
+import pic7 from "../assets/pic7.jpeg";
+import pic8 from "../assets/pic8.jpg";
 
-const ShowNode = () => {
+const ShowNode = ({ user, setUser }) => {
   const [node, setNode] = useState([]);
   const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
+
+  const { index } = location.state;
+  const images = [pic0, pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
+  const imageSrc = images[index] || images[0];
 
   useEffect(() => {
     axios
@@ -27,7 +40,7 @@ const ShowNode = () => {
   const handleSubmit = () => {
     if (!location.state?.user) {
       navigate(`/signUp`);
-      enqueueSnackbar("Please Sign In", { variant: "success" });
+      enqueueSnackbar("Please Sign In", { variant: "error" });
     }
     enqueueSnackbar("Successfully Acquired Data", { variant: "success" });
     navigate(`/dataMart`, { state: { user: location.state?.user } });
@@ -43,11 +56,18 @@ const ShowNode = () => {
           <div className="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
           <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
         </div>
-        {!location.state?.user ? <GuestHeader /> : <UserHeader />}
+        {!location.state?.user ? <GuestHeader /> : <UserHeader setUser={setUser}/>}
         <div className="w-full max-w-4xl p-4 flex flex-col items-start">
           <BackButton user={location.state?.user} />
           <h1 className="text-2xl mb-4 mt-6 font-semibold">{node.title}</h1>
           <div className="flex flex-col border-2 border-primary rounded-xl w-full p-6 bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 dark:border-gray-700">
+            <div className="relative w-full h-64">
+              <img
+                src={imageSrc}
+                alt="shopping image"
+                className="absolute inset-0 object-cover w-full h-full rounded-lg"
+              />
+            </div>
             {/* <div className="mb-4">
               <span className="text-lg mr-4 font-semibold text-gray-600 dark:text-gray-300">
                 Title:
@@ -56,7 +76,7 @@ const ShowNode = () => {
                 {node.title}
               </span>
             </div> */}
-            <div className="mb-4">
+            <div className="my-4">
               <span className="text-lg mr-4 font-semibold text-gray-600 dark:text-gray-300">
                 Price:
               </span>
@@ -64,7 +84,7 @@ const ShowNode = () => {
                 {node.price} ICP
               </span>
             </div>
-            <div className="my-4">
+            <div className="mb-4">
               <span className="text-lg mr-4 font-semibold text-gray-600 dark:text-gray-300">
                 Description:
                 <br />
