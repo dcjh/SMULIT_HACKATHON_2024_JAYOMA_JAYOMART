@@ -111,6 +111,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For any inquiries or issues, feel free to reach out:
 
-- **Email**: yourname@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
-
+- **GitHub**: [dcjh](https://github.com/dcjh/SMULIT_HACKATHON_2024_JAYOMA_BLOCKCHAIN_DATA_MART.git)
