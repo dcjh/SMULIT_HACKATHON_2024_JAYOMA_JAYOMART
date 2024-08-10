@@ -2,6 +2,10 @@
 
 Jayomart is a marketplace website built using the MERN stack (MongoDB, Express.js, React, Node.js) that enables the secure and transparent buying and selling of CSV data. By leveraging blockchain technology through the Internet Computer Protocol (ICP) and decentralized storage via IPFS, Jayomart ensures that all transactions and data storage are secure, transparent, and decentralized.
 
+![img1](https://github.com/dcjh/SMULIT_HACKATHON_2024_JAYOMA_JAYOMART/blob/main/images_readme/1.jpg)
+![img2](https://github.com/dcjh/SMULIT_HACKATHON_2024_JAYOMA_JAYOMART/blob/main/images_readme/2.jpg)
+![img3](https://github.com/dcjh/SMULIT_HACKATHON_2024_JAYOMA_JAYOMART/blob/main/images_readme/3.jpg)
+
 ## Table of Contents
 
 - [Features](#features)
