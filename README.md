@@ -1,6 +1,6 @@
 # Jayomart
 
-Jayomart is a marketplace website that leverages the MERN stack (MongoDB, Express.js, React, Node.js) to create a secure and transparent platform for selling and buying data. By integrating blockchain technology, Jayomart ensures that all data transactions are secure, transparent, and tamper-proof.
+Jayomart is a marketplace website built using the MERN stack (MongoDB, Express.js, React, Node.js) that enables the secure and transparent buying and selling of CSV data. By leveraging blockchain technology through the Internet Computer Protocol (ICP) and decentralized storage via IPFS, Jayomart ensures that all transactions and data storage are secure, transparent, and decentralized.
 
 ## Table of Contents
 
@@ -15,10 +15,11 @@ Jayomart is a marketplace website that leverages the MERN stack (MongoDB, Expres
 
 ## Features
 
-- **Secure Transactions**: All data transactions are secured using blockchain technology, ensuring transparency and trust.
-- **User-Friendly Interface**: Built with React, Jayomart provides a seamless and intuitive user experience.
-- **Data Marketplace**: Users can buy and sell data securely, with all transactions recorded on the blockchain.
-- **Real-Time Data Updates**: The platform ensures that data availability and pricing are updated in real-time.
+- **Blockchain Security**: ICP blockchain technology ensures that all transactions are secure, transparent, and immutable.
+- **Decentralized Storage**: CSV data files are stored using IPFS, providing decentralized and reliable storage.
+- **User-Friendly Interface**: A seamless and intuitive user experience powered by React.
+- **Data Marketplace**: Users can securely buy and sell CSV data, with all transactions recorded on the blockchain.
+- **Real-Time Data Updates**: Ensures data availability and pricing are always up to date.
 
 ## Tech Stack
 
@@ -28,7 +29,8 @@ Jayomart is built using the following technologies:
 - **Express.js**: For handling server-side operations.
 - **React**: For building the front-end user interface.
 - **Node.js**: As the server-side runtime environment.
-- **Blockchain**: Integrated to ensure secure and transparent transactions.
+- **Internet Computer Protocol (ICP)**: Integrated blockchain technology for secure and transparent transactions.
+- **IPFS (InterPlanetary File System)**: Decentralized storage solution for CSV data files.
 
 ## Installation
 
@@ -56,7 +58,7 @@ To get started with Jayomart, follow these steps:
     npm install
     ```
 
-5. Create a `.env` file in the server directory and add your environment variables (e.g., MongoDB URI, Blockchain API keys, etc.).
+5. Create a `.env` file in the server directory and add your environment variables (e.g., MongoDB URI, ICP API keys, IPFS configuration, etc.).
 
 6. Start the development server:
     ```bash
@@ -72,12 +74,12 @@ To get started with Jayomart, follow these steps:
 
 ## Usage
 
-- **Buying Data**: Users can browse available data sets and purchase them using cryptocurrency.
-- **Selling Data**: Users can list their own data sets for sale, with all transactions recorded on the blockchain.
+- **Buying CSV Data**: Browse and purchase available CSV data files securely using ICP cryptocurrency.
+- **Selling CSV Data**: List your CSV data files for sale, with all transactions recorded on the ICP blockchain and data stored on IPFS.
 
 ## API Endpoints
 
-Jayomart exposes several API endpoints for interacting with the platform. Below are some key endpoints:
+Jayomart provides several API endpoints for interacting with the platform. Below are some key endpoints:
 
 - **User Authentication**
   - `POST /api/auth/register`: Register a new user
@@ -111,4 +113,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For any inquiries or issues, feel free to reach out:
 
-- **GitHub**: [dcjh](https://github.com/dcjh/SMULIT_HACKATHON_2024_JAYOMA_BLOCKCHAIN_DATA_MART.git)
+- **GitHub**: [dcjh](https://github.com/dcjh)
+
