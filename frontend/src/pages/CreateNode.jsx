@@ -75,11 +75,11 @@ const CreateNode = () => {
             </div>
             <div className='my-4'>
                 <label>Description</label>
-                <input 
+                <textarea 
                     type='text'
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    className='border-2 border-gray-500 px-4 py-2 w-full'
+                    className='border-2 border-gray-500 px-4 py-2 w-full whitespace-pre-wrap'
                 />
             </div>
             <div className='my-4'>

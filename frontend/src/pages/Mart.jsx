@@ -34,7 +34,7 @@ const Mart = () => {
         </div>
         {!user ? <GuestHeader /> : <UserHeader />}
         <div className="p-4">
-          <CardView mart={mart} />
+          <CardView mart={mart} user={user}/>
         </div>
       </div>
     </>

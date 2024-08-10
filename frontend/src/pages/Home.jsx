@@ -33,10 +33,8 @@ const Home = () => {
                 <span className="text-primary dark:text-white">safe data.</span>
               </h1>
               <p className="mt-8 text-gray-700 dark:text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                incidunt nam itaque sed eius modi error totam sit illum.
-                Voluptas doloribus asperiores quaerat aperiam. Quidem harum
-                omnis beatae ipsum soluta!
+                AI is the new frontier of technology. To train your AI into the best model, you require the Best and most Accurate Data. Jayomart offers blockchain encryption 
+                technology that prevents the training Data that you purchase from being corrupted! The data is immutable, ensuring that you get the Data you purchased. 
               </p>
               <div className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
                 <Link
@@ -50,23 +48,23 @@ const Home = () => {
                 </Link>
               </div>
               <div className="hidden py-8 mt-12 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
-                <div className="text-left">
+                <div className="text-center">
                   <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
-                    The lowest price
+                    THE SAFEST
                   </h6>
-                  <p className="mt-2 text-gray-500">Some text here</p>
+                  <p className="mt-2 text-gray-500">Your data remains does not change <br/> from the moment it is published</p>
                 </div>
-                <div className="text-left">
+                <div className="text-center">
                   <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
-                    The fastest on the market
+                    THE BEST ON THE MARKET
                   </h6>
-                  <p className="mt-2 text-gray-500">Some text here</p>
+                  <p className="mt-2 text-gray-500">ICP's blockchain technology is <br/> reputable around the world!</p>
                 </div>
-                <div className="text-left">
+                <div className="text-center">
                   <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
-                    The most loved
+                    THE MOST RELIABLE
                   </h6>
-                  <p className="mt-2 text-gray-500">Some text here</p>
+                  <p className="mt-2 text-gray-500">Ensuring you get what you paid for</p>
                 </div>
               </div>
             </div>
